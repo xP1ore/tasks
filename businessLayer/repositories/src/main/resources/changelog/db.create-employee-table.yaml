@@ -1,0 +1,33 @@
+databaseChangeLog:
+  - changeSet:
+      id: "create-table-employee"
+      author: "akimovBogdan"
+      changes:
+        - createTable:
+            tableName: employee
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constrains:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: firstName
+                  type: varchar(50)
+                  constrains:
+                    nullable: false
+              - column:
+                  name: lastName
+                  type: varchar(50)
+                  constrains:
+                    nullable: false
+              - column:
+                  name: employeeStatus
+                  type: varchar(50)
+                  constrains:
+                    nullable: false
+              - column:
+                  name: emailAddress
+                  type: varchar(50)

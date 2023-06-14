@@ -1,0 +1,34 @@
+databaseChangeLog:
+  - changeSet:
+      id: "create-table-project"
+      author: "akimovBogdan"
+      changes:
+        - createTable:
+            tableName: project
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constrains:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: projectCode
+                  type: varchar(50)
+                  constrains:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: projectName
+                  type: varchar(50)
+                  constrains:
+                    nullable: false
+              - column:
+                name: projectStatus
+                type: varchar(50)
+                constrains:
+                  nullable: false
+              - column:
+                  name: projectDescription
+                  type: varchar(255)

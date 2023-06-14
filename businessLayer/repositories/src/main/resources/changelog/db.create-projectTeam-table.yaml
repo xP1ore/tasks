@@ -1,0 +1,34 @@
+databaseChangeLog:
+  - changeSet:
+      id: "create-table-projectTeam"
+      author: "akimovBogdan"
+      changes:
+        - createTable:
+            tableName: projectTeam
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constrains:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: fkProjectId
+                  type: BIGINT
+                  constrains:
+                    nullable: false
+                    foreignKeyName: fkProjectId
+                    references: project(id)
+              - column:
+                  name: fkEmployeeId
+                  type: BIGINT
+                  constrains:
+                    nullable: false
+                    foreignKeyName: fkEmployeeId
+                    references: employee(id)
+              - column:
+                  name: projectMemberRole
+                  type: varchar(50)
+                  constrains:
+                    nullable: false

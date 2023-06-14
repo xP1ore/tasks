@@ -1,0 +1,58 @@
+databaseChangeLog:
+  - changeSet:
+      id: "create-table-task"
+      author: "akimovBogdan"
+      changes:
+        - createTable:
+            tableName: task
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constrains:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: taskName
+                  type: varchar(50)
+                  constrains:
+                    nullable: false
+              - column:
+                  name: taskStatus
+                  type: varchar(50)
+                  constrains:
+                    nullable: false
+              - column:
+                  name: dateCreated
+                  type: timestamp
+                  constrains:
+                    nullable: false
+              - column:
+                  name: dateUpdated
+                  type: timestamp
+                  constrains:
+                    nullable: false
+              - column:
+                  name: fkExecutorId
+                  type: BIGINT
+                  constrains:
+                    foreignKeyName: fkExecutorId
+                    references: employee(id)
+              - column:
+                  name: fkAuthorId
+                  type: BIGINT
+                  constrains:
+                    foreignKeyName: fkAuthorId
+                    references: employee(id)
+              - column:
+                  name: taskLabor
+                  type: int
+                  constrains:
+                    nullable: false
+                    check: taskLabor > 0
+              - column:
+                  name: taskDeadline
+                  type: date
+                  constrains:
+                    nullable: false
