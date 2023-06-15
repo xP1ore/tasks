@@ -15,7 +15,7 @@ databaseChangeLog:
                     nullable: false
               - column:
                   name: projectCode
-                  type: varchar(50)
+                  type: int
                   constrains:
                     nullable: false
                     unique: true
